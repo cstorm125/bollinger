@@ -25,6 +25,7 @@ shinyServer(
 		})
 		
 		#Backtesting
+		#Returns
 		returns <- reactive({
 		    g<-dataInput()
 		    close <- Cl(g)
@@ -33,12 +34,39 @@ shinyServer(
 		    upper<-bbands$up
 		    signals<-Lag(ifelse(close<lower,1,ifelse(close>upper,-1,0)))
 		    r<-ROC(close, type = 'discrete')*signals
-		    return(r)
+		    result<-list(r,signals)
+		    return(result)
 		})
+		#Output plot
 		output$summary<-renderPlot({
 		    par(mfrow=c(3,1))
-		    charts.PerformanceSummary(returns())
+		    charts.PerformanceSummary(returns()[[1]])
 		})
+		#Downside Risks
+		output$ds <-renderTable({
+		    ds<-table.DownsideRisk(returns()[[1]])
+		    ds
+		})
+		#Drawdown
+		output$dd <-renderTable({
+		    dd<-table.Drawdowns(returns()[[1]])
+		    dd
+		})
+		#Annualized
+		output$ar <-renderTable({
+		    ar<-table.AnnualizedReturns(returns()[[1]])
+		    ar
+		})
+		#Trade
+		output$ts <-renderTable({
+		    signals<-returns()[[2]]
+		    ts<-table(signals)
+		    names(ts)<-c('Sell','Hold','Buy')
+		    ts<-as.data.frame(ts)
+		    colnames(ts)<-c('Actions','Frequency')
+		    ts
+		})
+		
 		
 		
 	}
