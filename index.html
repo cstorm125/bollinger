@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backtesting with Bollinger Bands App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Backtesting with Bollinger Bands App">
+  <meta name="author" content="Charin Polpanumas">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Backtesting with Bollinger Bands App</h1>
+    <h2>Course ProjectーShiny Application and Reproducible Pitch</h2>
+    <p>Charin Polpanumas<br/>The Internet</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What&#39;s it for?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>The app is a workshop for <a href="http://www.investopedia.com/terms/b/backtesting.asp">stock backtesting</a> 
+using <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:bollinger_bands">Bollinger Bands</a> assuming no commisssion. (Data from Yahoo)</p></li>
+<li><p>Backtesting is basically testing your set of rules (&#39;strategy&#39;) against historical data and see how
+profitable it is.</p></li>
+<li><p>You can access the app <a href="https://cstorm125.shinyapps.io/bollinger/">here</a></p></li>
+<li><p>Warning: You may have to wait for plots to load/reload.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>What is Bollinger Bands strategy?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><p>Bollinger Bands is a strategy where one buys when price drops below the lower band and sells when it pops over the upper band.</p></li>
+<li><p>The upper and lower bands (red) are moving averages of type SMA (simple), WMA (weighted), or EMA (exponential) for a given days plus/minus two standard deviations.</p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>What to input?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>One can customize the parameters of the Bollinger bands by the sidebar input:</p>
+
+<ul>
+<li><p>Symbol: symbol of the stock you want to backtest</p></li>
+<li><p>Date Range: range of date for beginning and ending the backtest</p></li>
+<li><p>Method: method for calculating the lower and upper bands: SMA (simple), WMA (weighted), EMA (exponential)</p></li>
+<li><p>Moving Average Days: number of days used to calculate the moving averages</p></li>
+</ul>
+
+<p>Varying these parameters gives different results and analysis.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>What to make of the result?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><p>Cumulative return is the total return since one begins trading. For example, a cumulative return of 0.10 means 10% total return.</p></li>
+<li><p>Daily return is return on a daily basis.</p></li>
+<li><p>Drawdowns are periods where the portfolio is at loss. For instance, -0.1 drawdown means one is losing 10%.</p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What&#39;s it for?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='What is Bollinger Bands strategy?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='What to input?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='What to make of the result?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
