@@ -3,7 +3,7 @@ This app runs backtesting using Bollinger Bands with no commission with data fro
 
 This is part of the Coursera Data Science Specialization's [Developing Data Products](https://www.coursera.org/account/accomplishments/records/DQGJ2QCH6BH5) Final Project.
 
-App can be found [here](http://cstorm125.shinyapps.io/bollinger/)
+App can be found [here](http://cstorm125.shinyapps.io/bollinger/). Presentation pitch [here](http://cstorm125.github.io/bollinger/)
 
 GitHub repository [here] (https://github.com/cstorm125/bollinger)
                      
